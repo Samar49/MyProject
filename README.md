@@ -1,28 +1,35 @@
-# 🌤️ Mood Journal
+# MyProject 🚀
 
-A simple React-based mood journaling application that lets users track their daily emotions and jot down notes. This lightweight app is perfect for emotional self-awareness and reflection.
+Welcome to **MyProject** — a curated collection of all the projects I’ve built so far. This repository showcases my work in AI/ML, frontend development, and full-stack applications.
 
-## ✨ Features
+---
 
-- Select your current mood (😊 😢 😡 😴 😐).
-- Optionally write a short note about your day.
-- Entries are timestamped with the current date.
-- All previous entries are displayed in a clean, scrollable list.
+## 📁 Projects Included
 
+### 🤖 AI/ML Project
+- **Image Colorization using Deep Learning**
+  - A neural network-based model that converts black and white images into color.
+  - Technologies: Python, TensorFlow/Keras, OpenCV
 
-## 🚀 Getting Started
+### 🌐 Frontend Project
+- **Flipkart Clone**
+  - A responsive frontend clone of the Flipkart e-commerce platform.
+  - Features product listings, navigation, and interactive UI components.
+  - Technologies: HTML, CSS, JavaScript, React
 
-### Prerequisites
+### 🧩 Full Stack Projects
+1. **Blog Platform**
+   - A full-featured content publishing platform where users can create, edit, and delete blog posts.
+   - Technologies: MERN Stack (MongoDB, Express.js, React, Node.js)
 
-Make sure you have the following installed:
+2. **Task Manager App**
+   - A web app to manage daily tasks with user authentication and real-time updates.
+   - Technologies: React, Node.js, Express.js, MongoDB, JWT
 
-- [Node.js](https://nodejs.org/)
-- npm or yarn
+---
 
-### Installation
+## 📌 How to Use
 
 1. Clone the repository:
-
    ```bash
-   git clone https://github.com/Samar49/mood-journal.git
-   cd mood-journal
+   git clone https://github.com/your-username/MyProject.git
