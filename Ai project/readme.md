@@ -15,17 +15,6 @@ The **AI Project** showcases the use of modern machine learning and deep learnin
 
 > More AI projects will be added soon...
 
-## 📁 Folder Structure
-
-Ai-project/
-├── ColorizationProject/
-│ ├── model/
-│ ├── dataset/
-│ ├── notebooks/
-│ ├── outputs/
-│ ├── requirements.txt
-│ └── README.md
-└── README.md
 
 ## 🛠️ Tech Stack
 
