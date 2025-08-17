@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* body{
+    background-color: black;
+    color: white;
+} */
+
+/* the viewport is the user's visible area of a web page. It's the part of the document you can see in the browser window without scrolling.
+
+Think of your browser as a window and the website as a large painting behind it. The viewport is the portion of the painting you can see through that window at any given moment.
+
+The size of the viewport changes depending on the device (mobile phone, tablet, desktop) and the size of the browser window itself. */
+.left{
+    width: 25vw;
+    padding: 21px;
+}
+.right{
+    width: 75vw;
+}
+.home ul li{
+    display: flex;
+    width: 15px;
+    list-style: none;
+    gap: 15px;
+
+}
