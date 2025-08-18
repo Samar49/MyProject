@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
-/* body{
+body{
     background-color: black;
     color: white;
-} */
+}
 
 /* the viewport is the user's visible area of a web page. It's the part of the document you can see in the browser window without scrolling.
 
@@ -14,15 +16,59 @@ Think of your browser as a window and the website as a large painting behind it.
 The size of the viewport changes depending on the device (mobile phone, tablet, desktop) and the size of the browser window itself. */
 .left{
     width: 25vw;
-    padding: 21px;
+    padding: 10px;
 }
 .right{
     width: 75vw;
+    
+}
+.home{
+    
 }
 .home ul li{
     display: flex;
     width: 15px;
     list-style: none;
     gap: 15px;
+    padding-top: 14px;
+    font-weight: bold;
+}
+.heading{
+    display: flex;
+    width: 100%;
+    gap: 15px;
+    padding-top: 14px;
+    font-weight: bold;
+    align-items: center; /* vertically center kardega */
+    padding: 23px 14px; /* first value is for top and bottom and second value is for left and right */
+    font-size: 13px;
 
+}
+
+.heading img{
+    width: 20px;
+}
+.footer{
+    display: flex;
+    font-size: 10px;
+    gap: 13px;
+    position: absolute;
+    bottom: 0;
+}
+.footer a{
+    color: grey;
+}
+.library{
+    min-height: 80vh;
+    position: relative;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+.header > *{
+    padding: 20px;
+}
+.right{
+    
 }
