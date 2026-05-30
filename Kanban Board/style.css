@@ -1,6 +1,6 @@
 :root{
-    --bg-color: #000000;
-    --primary-text-color: #e7e1e1;
+    --bg-color: #7f5539;
+    --primary-text-color: #ede0d4;
     /* padding variables  */
     --nav-padding: 15px 30 px;
     --section-padding: 15px 30px;
@@ -9,7 +9,7 @@
     --padding-l:15px;
     --padding-xl:20px;
     --padding-xxl: 30px;
-    --bg-button-color: #3e3e3e;
+    --bg-button-color: #a68a64;
     
     /* border radius variables */
     --border-radius-s: 5px;
@@ -19,13 +19,13 @@
     --border-radius-xxl: 30px;
 
     /* task colours */
-    --background-task-color: #c0c0c0;
+    --background-task-color: #414833;
 
     /* button background color */
     --delete-color: red;
 
     /* pop up color */
-    --pop-color:#111111;
+    --pop-color:#656d4a68;
 }
 
 *{
@@ -58,6 +58,9 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: sticky;
+    top:0;
+    background-color: var(--bg-color);
 }
 
 nav button{
@@ -80,6 +83,7 @@ section{
 section .task-column{
     background-color: var(--bg-button-color);
     flex-grow: 1;
+    width: 100%;
     padding: var(--padding-m);
     display: flex;
     flex-direction: column;
