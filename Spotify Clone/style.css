@@ -48,15 +48,20 @@ The size of the viewport changes depending on the device (mobile phone, tablet, 
 .heading img{
     width: 20px;
 }
+.right{
+    margin: 16px 0;
+}
 .footer{
     display: flex;
     font-size: 10px;
     gap: 13px;
     position: absolute;
     bottom: 0;
+    padding: 10px 0;
 }
 .footer a{
     color: grey;
+
 }
 .library{
     min-height: 80vh;
@@ -64,11 +69,61 @@ The size of the viewport changes depending on the device (mobile phone, tablet, 
 }
 .header{
     display: flex;
+    /* This property turns the .header element into a flex container. This means its direct children (like a logo, navigation links, or buttons) are now laid out in a single row by default. */
+
+
     justify-content: space-between;
+    /* This property controls the horizontal alignment of the items inside the flex container.
+
+space-between pushes the first item to the far left and the last item to the far right. Any items in between are distributed with equal space around them. This is perfect for a header where you want the logo on the left and navigation/login buttons on the right. */
+    background-color:  rgb(71, 67, 67);
 }
 .header > *{
     padding: 20px;
 }
-.right{
+.spotifyPlaylist{
+    padding: 16px;
+}
+.cardContainer{
+    margin: 30px;
+    display: flex;
+    /* this tells the direct children (the cards) to arrange themselves in a single horizontal line. */
+    gap: 10px;
+    flex-wrap: wrap;
+    /* This is the key property for responsiveness. It allows the cards to wrap onto a new line if the container becomes too narrow to fit them all in a single row. Without this, the cards would try to shrink and overflow their container. */
+}
+.card{
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #454545;
+    position: relative;
     
+}
+ .card > *{ /* .card > * translates to "select any element that is a direct child of .card. */
+    padding-top: 10px;
+    
+}
+.card img{
+    width: 100%;
+    object-fit: contain;
+    /* This is a crucial property for controlling how the image fits within its dimensions. It scales the image down as much as needed to fit completely inside its container while maintaining its original aspect ratio. This prevents the image from being stretched, squished, or cropped. */
+}
+.play{
+    width: 28px;
+    height: 28px; 
+    background-color: #01eb57;
+    border-radius: 50%; 
+    padding: 4px; display: flex;
+    align-items: center; 
+    justify-content: center;
+    position: absolute;
+    top: 168px;
+    right: 17px;
+    /* opacity: 0; */
+
+}
+.play svg path {
+  fill: black;
+  stroke: none;
 }
