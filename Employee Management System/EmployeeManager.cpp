@@ -54,3 +54,42 @@ void EmployeeManager::loadFromFile(){
     }
     file.close();
 }
+void EmployeeManager::addEmployee(){
+    int id, age;
+    string name, department;
+    double salary;
+    cout << "\nEnter Employee ID: ";
+    while (!(cin >> id) || id <= 0){
+        cout << "Invalid ID. Enter again: ";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
+    if (isDuplicateID(id)){
+        cout << "Employee ID already exists.\n";
+        return;
+    }
+    cin.ignore();
+    cout << "Enter Name: ";
+    getline(cin, name);
+    cout << "Enter Age: ";
+    while (!(cin >> age) || age <= 0){
+        cout << "Invalid Age. Enter again: ";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
+    cin.ignore();
+    cout << "Enter Department: ";
+    getline(cin, department);
+    cout << "Enter Salary: ";
+    while (!(cin >> salary) || salary < 0){
+        cout << "Invalid Salary. Enter again: ";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
+    Employee employee(id, name, age, department, salary);
+    employees.push_back(employee);
+    saveToFile();
+    cout << "Employee added successfully.\n";
+}
+
+
