@@ -5,7 +5,7 @@ void showMenu(){
     cout<<"1. Add Employee\n";
     cout<<"2. Display All Employees\n";
     cout<<"3. Search Employee by ID\n";
-    cou<<"4. Update Employee\n";
+    cout<<"4. Update Employee\n";
     cout<<"5. Delete Employee\n";
     cout<<"6. Exit\n";
     cout<<"Enter your choice: ";
@@ -33,7 +33,7 @@ int main(){
             break;
         case 4:
             manager.updateEmployee();
-            break
+            break;
         case 5:
             manager.deleteEmployee();
             break;
