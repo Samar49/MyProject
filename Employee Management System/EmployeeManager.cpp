@@ -91,5 +91,89 @@ void EmployeeManager::addEmployee(){
     saveToFile();
     cout << "Employee added successfully.\n";
 }
+// Display All Employees
+void EmployeeManager::displayAllEmployees() const
+{
+    if (employees.empty()){
+        cout << "\nNo employee records found.\n";
+        return;
+    }
+    cout << "\n============================================================\n";
+    cout<<left<<setw(10)<<"ID"
+        <<setw(20)<<"Name"
+        <<setw(10)<<"Age"
+        <<setw(20)<<"Department"
+        <<setw(10)<<"Salary"<<endl;
+    cout<<"============================================================\n";
+    for(const Employee &employee : employees){
+        employee.displayEmployee();
+    }
+}
+
+// Search Employee
+void EmployeeManager::searchEmployeeByID() const{
+    int id;
+    cout << "\nEnter Employee ID to search: ";
+    cin >> id;
+    for (const Employee &employee : employees){
+        if (employee.getEmployeeID()==id){
+            cout<<"\nEmployee Found:\n";
+            cout<<left<<setw(10)<<"ID"
+                << setw(20)<<"Name"
+                << setw(10)<<"Age"
+                << setw(20)<<"Department"
+                << setw(10)<<"Salary"<<endl;
+            employee.displayEmployee();
+            return;
+        }
+    }
+    cout<<"Employee not found.\n";
+}
+// Update Employee
+void EmployeeManager::updateEmployee(){
+    int id;
+    cout<<"\nEnter Employee ID to update: ";
+    cin>>id;
+    for (Employee &employee : employees){
+        if (employee.getEmployeeID() == id){
+            string name, department;
+            int age;
+            double salary;
+            cin.ignore();
+            cout<<"Enter New Name: ";
+            getline(cin, name);
+            cout<<"Enter New Age: ";
+            cin>>age;
+            cin.ignore();
+            cout<<"Enter New Department: ";
+            getline(cin, department);
+            cout<<"Enter New Salary: ";
+            cin>>salary;
+            employee.setName(name);
+            employee.setAge(age);
+            employee.setDepartment(department);
+            employee.setSalary(salary);
+            saveToFile();
+            cout<<"Employee updated successfully.\n";
+            return;
+        }
+    }
+    cout<<"Employee not found.\n";
+}
+// Delete Employee
+void EmployeeManager::deleteEmployee(){
+    int id;
+    cout<<"\nEnter Employee ID to delete: ";
+    cin>>id;
+    for(auto it = employees.begin(); it != employees.end(); ++it){
+        if(it->getEmployeeID()==id){
+            employees.erase(it);
+            saveToFile();
+            cout<<"Employee deleted successfully.\n";
+            return;
+        }
+    }
+    cout<<"Employee not found.\n";
+}
 
 
