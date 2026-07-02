@@ -1,6 +1,4 @@
 let tasksData={}
-
-
 const todo=document.querySelector('#todo');
 const progress=document.querySelector('#progress');
 const done=document.querySelector('#done');
@@ -12,7 +10,6 @@ function addTask(title,desc,column){
     const div=document.createElement("div")
     div.classList.add("task")
     div.setAttribute("draggable","true")
-
     div.innerHTML=`
             <h2>${title}</h2>
             <p>${desc}</p>
@@ -27,16 +24,14 @@ function addTask(title,desc,column){
         div.remove();
         updateTaskCount();
     })
-
     return div;
 }
 
 // creating function for keeping count of tasks in 3 all section
 function updateTaskCount(){
-    columns.forEach(col => {
-            const tasks = col.querySelectorAll(".task")
-            const count = col.querySelector(".right")
-
+    columns.forEach(col=>{
+            const tasks=col.querySelectorAll(".task")
+            const count=col.querySelector(".right")
             tasksData[col.id]=Array.from(tasks).map(t=>{
                 return{
                     title:t.querySelector("h2").innerText,
@@ -45,17 +40,12 @@ function updateTaskCount(){
             })
             // logic to save data on local storage
             localStorage.setItem("tasks",JSON.stringify(tasksData)); 
-
             count.innerText=tasks.length;
         });
 }
-
-
-
 // to check if any data is present on local storage
 if(localStorage.getItem("tasks")){
     const data=JSON.parse(localStorage.getItem("tasks")); 
-
     for(const col in data){
         const column =document.querySelector(`#${col}`);
         data[col].forEach(task =>{
@@ -68,15 +58,12 @@ if(localStorage.getItem("tasks")){
 }
 
 const tasks=document.querySelectorAll('.task');
-
 tasks.forEach(task=> {
     task.addEventListener("drag",(e)=>{
         // console.log("dragging",e)
         dragElement=task;
-    
 })
 })
-
 function addDragEventOnColumn(column){
     column.addEventListener('dragenter',(e)=>{
         column.classList.add("hover-over")
@@ -92,14 +79,11 @@ function addDragEventOnColumn(column){
         console.log("dropped",dragElement,column);
         column.appendChild(dragElement);
         column.classList.remove("hover-over");
-
         // function called for keeping count
         updateTaskCount(); 
-        
     })
     
 }
-
 addDragEventOnColumn(todo);
 addDragEventOnColumn(progress)
 addDragEventOnColumn(done)
@@ -108,7 +92,6 @@ addDragEventOnColumn(done)
 const toggleModalButton = document.querySelector('#toggle-modal')
 const modalBg=document.querySelector(".modal .bg")
 const modal=document.querySelector(".modal")
-
 const addTaskButton=document.querySelector("#add-new-task")
 
 toggleModalButton.addEventListener("click",()=>{
@@ -132,7 +115,4 @@ addTaskButton.addEventListener("click",()=>{
     modal.classList.remove("active")
     document.querySelector("#task-title-input").value="";
     document.querySelector("#task-desc-input").value="";
-
-
-    
 })
